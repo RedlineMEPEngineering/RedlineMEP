@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REDLINE MEP ENGINEERING</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { margin:0; font-family:'Oswald',sans-serif; background:#fff; color:#333; }
+    nav a,h1,h2,h3 { text-transform:uppercase; }
+    header { background:#f00; padding:20px; text-align:center; }
+    header a img { max-height:200px; width:auto; cursor:pointer; }
+    nav { background:#222; padding:12px; display:flex; flex-wrap:wrap; justify-content:center; gap:15px; }
+    nav a { color:#fff; text-decoration:none; font-weight:600; cursor:pointer; }
+    nav a:hover { text-decoration:underline; }
+    .section { display:none; padding:30px 20px; max-width:1000px; margin:auto; }
+    .active { display:block; }
+    .hero { background:#eee; text-align:center; padding:40px 20px; }
+    .hero h1 { color:#c00; font-size:2.5rem; margin:0; }
+    .hero p { margin:10px 0; }
+    .subnav { display:flex; flex-wrap:wrap; gap:15px; justify-content:center; margin-top:20px; }
+    .subnav a { color:#f00; cursor:pointer; font-weight:600; text-decoration:none; }
+    .subnav a:hover { text-decoration:underline; }
+    .subsection { display:none; margin-top:20px; }
+    .subsection.active { display:block; }
+    img { max-width:100%; height:auto; margin-top:20px; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.1); }
+    form { margin-top:20px; display:flex; flex-direction:column; gap:15px; }
+    input,textarea,button { font-family:'Oswald',sans-serif; font-size:1rem; padding:10px; border:1px solid #ccc; border-radius:6px; width:100%; box-sizing:border-box; }
+    button { background:#f00; color:#fff; border:none; cursor:pointer; }
+    button:hover { background:#c00; }
+    footer { background:#f00; color:#fff; text-align:center; padding:15px; margin-top:30px; }
+    @media(max-width:768px){ nav{flex-direction:column;} .hero h1{font-size:2rem;} .section{padding:20px 10px;} .subnav{flex-direction:column;} }
+  </style>
+  <script>
+    function showTab(id){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');if(id==='about') showSub('service-mech');else document.querySelectorAll('.subsection').forEach(s=>s.classList.remove('active'));}
+    function showSub(id){document.querySelectorAll('.subsection').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');}
+    window.addEventListener('DOMContentLoaded',()=>showTab('home'));
+  </script>
+</head>
+<body>
+  <header><a onclick="showTab('home')"><img src="REDLINE ENGINEERING LOGO.png" alt="Logo"></a></header>
+  <nav>
+    <a onclick="showTab('home')">Home</a>
+    <a onclick="showTab('about')">About</a>
+    <a onclick="showTab('residential')">Residential</a>
+    <a onclick="showTab('private')">Private Sector</a>
+    <a onclick="showTab('commercial')">Commercial</a>
+    <a onclick="showTab('industrial')">Industrial</a>
+    <a onclick="showTab('projects')">Projects</a>
+    <a onclick="showTab('bim')">BIM</a>
+    <a onclick="showTab('careers')">Careers</a>
+    <a onclick="showTab('contact')">Contact</a>
+  </nav>
+
+  <section id="home" class="section hero active">
+    <h1>ENGINEERING TOMORROW'S SYSTEMS TODAY</h1>
+    <p>Trusted MEP Solutions for Commercial, Residential, and Industrial Projects</p>
+  </section>
+
+  <section id="about" class="section">
+    <h2>ABOUT REDLINE MEP ENGINEERING</h2>
+    <p>Redline MEP Engineering delivers efficient, code-compliant, and sustainable building systems. Founded out of Port St. Lucie, Florida, we serve nationwide.</p>
+    <div class="subnav">
+      <a onclick="showSub('service-mech')">Mechanical</a>
+      <a onclick="showSub('service-elec')">Electrical</a>
+      <a onclick="showSub('service-plumb')">Plumbing</a>
+    </div>
+    <div id="service-mech" class="subsection active">
+      <h3>MECHANICAL ENGINEERING</h3>
+      <ul><li>HVAC Design</li><li>Chilled Water Systems</li><li>Energy Recovery</li><li>Life-Cycle Cost Analysis</li></ul>
+      <img src="Mechanical.jpg" alt="Mechanical">
+      <img src="Chilled-Water-Systems.jpg.webp" alt="Chilled">
+    </div>
+    <div id="service-elec" class="subsection">
+      <h3>ELECTRICAL ENGINEERING</h3>
+      <ul><li>Power Distribution</li><li>Lighting Design</li><li>Grounding & Surge Protection</li><li>Daylight Harvesting</li></ul>
+      <img src="electrical room.jpg" alt="Electrical Room">
+      <img src="electrical 2.jpg" alt="Electrical 2">
+    </div>
+    <div id="service-plumb" class="subsection">
+      <h3>PLUMBING ENGINEERING</h3>
+      <ul><li>Domestic Hot Water</li><li>Storm Drainage</li><li>Sanitary & Waste</li><li>Fire Protection</li></ul>
+    </div>
+  </section>
+
+  <section id="residential" class="section">
+    <h2>RESIDENTIAL SERVICES</h2>
+    <p>Our residential expertise spans apartment communities, luxury custom homes, and apartment homes delivering elegant, efficient systems tailored to modern living.</p>
+    <img src="Elemi.png" alt="Elemi">
+  </section>
+
+  <section id="private" class="section">
+    <h2>PRIVATE SECTOR</h2>
+    <p>We serve small and private businesses. At YOT Bar, we coordinated a new kitchen layout and HVAC installation to optimize workflow and comfort.</p>
+    <img src="Yot Bar.jpg" alt="YOT Bar">
+  </section>
+
+  <section id="commercial" class="section">
+    <h2>COMMERCIAL SERVICES</h2>
+    <p>Some of our past projects include notable companies such as Twin Peaks Restaurants, Chauvet Experience Center, and Hobby Lobby.</p>
+    <img src="Twin peaks.jpg" alt="Twin Peaks">
+    <img src="ChauvetExperienceCenter.png" alt="Chauvet">
+    <img src="hobby-lobby.jpg" alt="Hobby Lobby">
+  </section>
+
+  <section id="industrial" class="section">
+    <h2>INDUSTRIAL SERVICES</h2>
+    <p>Our industrial portfolio includes facilities like Canik & Century Arms and Cordis Lab with robust MEP solutions.</p>
+    <img src="Canik and Century.jpg" alt="Canik & Century">
+    <img src="Cordis image.jpg" alt="Cordis Lab">
+  </section>
+
+  <section id="projects" class="section">
+    <h2>PROJECTS</h2>
+    <p>These are some of the companies we've engineered for during our tenure:</p>
+    <div class="projects-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;">
+      <figure>
+        <img src="Twin peaks.jpg" alt="Twin Peaks Restaurants">
+        <figcaption>Twin Peaks Restaurants</figcaption>
+      </figure>
+      <figure>
+        <img src="ChauvetExperienceCenter.png" alt="Chauvet Experience Center">
+        <figcaption>Chauvet Experience Center</figcaption>
+      </figure>
+      <figure>
+        <img src="hobby-lobby.jpg" alt="Hobby Lobby">
+        <figcaption>Hobby Lobby</figcaption>
+      </figure>
+      <figure>
+        <img src="Residential home.png" alt="Residential Homes">
+        <figcaption>Residential Homes</figcaption>
+      </figure>
+      <figure>
+        <img src="Canik and Century.jpg" alt="Canik & Century Arms">
+        <figcaption>Canik & Century Arms</figcaption>
+      </figure>
+      <figure>
+        <img src="Cordis image.jpg" alt="Cordis Lab">
+        <figcaption>Cordis Lab</figcaption>
+      </figure>
+      <figure>
+        <img src="Elemi.png" alt="Elemi Condo Project">
+        <figcaption>Elemi Condo Project</figcaption>
+      </figure>
+      <figure>
+        <img src="Yot Bar.jpg" alt="YOT Bar Restaurant">
+        <figcaption>YOT Bar Restaurant</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="bim" class="section">
+    <h2>BIM VISUALIZATION</h2>
+    <img src="Bim MEP.png" alt="BIM MEP Visualization">
+  </section>
+
+  <section id="careers" class="section">
+    <h2>CAREERS</h2>
+    <form action="https://formspree.io/f/xzzgelkq" method="POST" enctype="multipart/form-data">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="file" name="resume" accept=".pdf,.doc,.docx" required>
+      <textarea name="message" rows="4" placeholder="Cover Letter"></textarea>
+      <button type="submit">Submit Application</button>
+    </form>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>CONTACT US</h2>"
+    <p>Email: contact@redlinemep.com</p>
+    <p>Phone: (754) 235-7821</p>
+    <form action="https://formspree.io/f/xzzgelkq" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Submit Request</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 REDLINE MEP ENGINEERING. All rights reserved.</p>
+  </footer>
+</body>
+</html>
